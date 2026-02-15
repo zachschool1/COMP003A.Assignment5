@@ -4,20 +4,31 @@
     {
         static void Main(string[] args)
         {
+            do {
+                IntroductionMsg();
 
-            IntroductionMsg();
+                Console.WriteLine("What is your name?");
+                string inputName = Console.ReadLine();
+                Console.WriteLine("How old are you?");
+                int inputAge = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("What is your name?");
-            string inputName = Console.ReadLine();
-            Console.WriteLine("How old are you?");
-            int inputAge = Convert.ToInt32(Console.ReadLine());
+                ShowInfo(inputName, inputAge);
 
-            ShowInfo(inputName, inputAge);
+                double divisionAnswer = DoDivision(12, 6);
+                Console.WriteLine($"Your divison answer is {divisionAnswer}");
 
-            double divisionAnswer = DoDivision(12, 4);
-            Console.WriteLine($"Your divison answer is {divisionAnswer}");
-           
-
+                if (inputAge < 20)
+                {
+                    Console.WriteLine("You are too young. Try again.");
+                    
+                }
+                else
+                {
+                    Console.WriteLine("You are 20 or over. Program ended.");
+                    break;
+                }
+            } while (true);
+         
         }
 
         static void IntroductionMsg()
@@ -34,6 +45,8 @@
         {
             return num1 / num2;
         }
+
+
 
     }
 }
